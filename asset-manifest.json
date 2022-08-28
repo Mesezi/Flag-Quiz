@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Flag-Quiz/static/css/main.db6d3161.css",
-    "main.js": "/Flag-Quiz/static/js/main.ca495c16.js",
+    "main.css": "/Flag-Quiz/static/css/main.674de2fc.css",
+    "main.js": "/Flag-Quiz/static/js/main.db16ec80.js",
     "static/js/787.7df23b36.chunk.js": "/Flag-Quiz/static/js/787.7df23b36.chunk.js",
     "static/media/heartbeat.mp3": "/Flag-Quiz/static/media/heartbeat.0dd6d95029e2d2cdcca1.mp3",
     "static/media/fabric flag.jpg": "/Flag-Quiz/static/media/fabric flag.0b59532b7574170cd59a.jpg",
@@ -23,12 +23,12 @@
     "static/media/fair man.png": "/Flag-Quiz/static/media/fair man.257a66dc5fa1c45cefd8.png",
     "static/media/logo.svg": "/Flag-Quiz/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/Flag-Quiz/index.html",
-    "main.db6d3161.css.map": "/Flag-Quiz/static/css/main.db6d3161.css.map",
-    "main.ca495c16.js.map": "/Flag-Quiz/static/js/main.ca495c16.js.map",
+    "main.674de2fc.css.map": "/Flag-Quiz/static/css/main.674de2fc.css.map",
+    "main.db16ec80.js.map": "/Flag-Quiz/static/js/main.db16ec80.js.map",
     "787.7df23b36.chunk.js.map": "/Flag-Quiz/static/js/787.7df23b36.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.db6d3161.css",
-    "static/js/main.ca495c16.js"
+    "static/css/main.674de2fc.css",
+    "static/js/main.db16ec80.js"
   ]
 }
