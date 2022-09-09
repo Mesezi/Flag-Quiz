@@ -1,13 +1,547 @@
-body {
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --bgColor : white;
+}
+#root{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button{
+  cursor: pointer;
+}
+
+.label{
+  width:100%;
+  text-align: center;
+}
+
+
+.underline{
+  text-decoration: underline;
+  text-underline-offset: .5rem;
+  cursor: pointer;
+}
+
+.underline:hover{
+  color: rgb(255, 255, 255, .8);
+}
+i{
+ cursor: pointer; 
+}
+
+.game-logo{
+  height: 12rem;
+}
+
+.game-icon{
+  height: 3rem;
+}
+
+body{
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-size: contain;
+  font-family: 'Poppins', sans-serif;
+  color: var(--bgColor);
+  background:linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)), url(./assets/fabric\ flag.jpg);
+  background-size: cover;
+  scroll-behavior: smooth;
+}
+html{
+  font-size: 17px;
+}
+audio{
+  display: none;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem 1.7rem;
+  color: white;
+}
+nav div{
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+  gap: 2rem;
+}
+.home, .details{
+height: 90vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+padding: 1rem;
+animation: Pop 500ms;
+font-size: 1.2rem;
+}
+.home hr{
+  width: 50%;
+  background-color: white;
+}
+.home p{
+  text-align: center;
+}
+
+.game-over{
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 90vh;
+  justify-content: center;
+  padding: 2rem;
+  margin: auto;
+}
+.game-over > section:nth-child(1){
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+.game-over > section:nth-child(2){
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+.home button, .details button, .game-over button{
+  background-color: white;
+  border: none;
+  outline: none;
+  padding: .6rem 7rem;
+  color: black;
+  margin: 0 auto;
+  border-radius: .4rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+}
+
+.pick-avatar-container{
+  display: flex;
+  gap: .4rem;
+  align-items: center;
+  transition: all ease-in-out 500ms;
+}
+
+.details input, .game-over input{
+  height: 3rem;
+  padding: .4rem .6rem;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: rgb(255, 255, 255, 0);
+  border-bottom: .1rem solid white;
+  margin-top: .4rem;
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.game-over-score{
+display: flex;
+align-items: center;
+gap: .5rem;
+}
+.emoji{
+  height: 7rem;
+  display: block;
+  margin: 1rem auto;
+}
+.emoji+p{
+ text-align: center;
+}
+.menu{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgb(0, 0, 0, .97);
+  z-index: 13;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease-in-out 500ms;
+}
+.menu-box{
+  width: 80%;
+  height: 80%;
+  animation: Pop 500ms;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .4rem;
+}
+.menu-box i{
+font-size: 6rem;
+}
+.home-prompt h2{
+text-align: center;
+}
+
+.home-prompt > div{
+  margin-top: .5rem;
+display: flex;
+gap: 1rem;
+}
+
+.home-prompt button{
+  padding: 1rem 4rem;
+  background-color: white;
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  border-radius: .5rem;
+}
+
+.home-prompt button:hover, .home button:hover, .details button:hover, .game-over button:hover{
+  transition: all ease-in-out 200ms;
+  filter: brightness(90%);
+  transform: scale(.98);
+}
+
+.home-prompt button:nth-child(2){
+  background-color: green;
+  color: white;
+}
+
+.game-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+animation: Pop 500ms;
+justify-content: space-between;
+cursor: pointer;
+padding: .5rem ;
+}
+
+
+.highscore--health{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 0;
+}
+.player--health{
+  display: flex;
+}
+.highscore--health span{
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 2px 5px 10px rgb(0, 0, 0, .2); 
+}
+.highscore--health .health{
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: 1.2rem;
+  color: white;
+  animation: Pop 500ms;
+ 
+}
+
+ .health i{
+  color: red;
+  font-size: 1.5rem;
+}
+
+
+.name--remarks{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 2px 5px 10px rgb(0, 0, 0, .2); 
+}
+.name--remarks > div{
+  display: flex;
+  align-items: center;
+}
+.name--remarks .player{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.score{
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.name h2, .flag h2{
+  text-align: center;
+}
+.name img{
+  height: 7rem;
+  width: 11rem;
+}
+.flag h2> span{
+  font-size: 1.9rem;
+  text-decoration: underline var(--bgColor);
+  text-underline-offset: .2rem;
+}
+
+.name-options{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  width: 90%;
+}
+
+.flag-options {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  width: 90%;
+}
+
+.option-btn{
+position: relative;
+text-align: center;
+background-color: rgb(0, 0, 0, 0);
+border: none;
+outline: none;
+color: white;
+cursor: pointer;
+}
+
+
+.option-btn p{
+  z-index: 10;
+}
+
+.options span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  height: 100%;
+  width: 100%;
+}
+
+.options span.green {
+  background-color: rgb(0, 128, 0, .7);
+}
+
+.options span.red{
+  background-color: rgb(255, 0, 0, .7);
+}
+
+.name-options .option-btn{
+  padding: .8rem .65rem;
+  border-radius: .5rem;
+  border: .15rem solid white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 2px 5px 10px rgb(0, 0, 0, 1); 
+}
+
+.flag-options .option-btn{
+  padding: 1rem .65rem; 
+  filter: drop-shadow(2px 5px 10px rgb(0, 0, 0, .5));
+}
+
+.active-correct{
+  background-color: rgb(0, 128, 0, .7);
+  color: white;
+}
+
+.active-option{
+  background-color: white;
+  color: black;
+}
+
+.flag img{
+height: 6rem;
+width: 10rem;
+display: block;
+margin: 0 auto;
+}
+.content{
+  width: 95vw;
+  margin: auto;
+  padding: .5rem 1rem;
+}
+.current-avatar{
+  display: block;
+  padding: .4rem;
+  border: .2rem solid white;
+}
+
+.avatars-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: .7rem;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: white;
+  animation: Pop 400ms;
+}
+.highscore-container, .read-up-container{
+  min-height: 90vh;
+  padding: .8rem .5rem;
+  width: 100%;
+  font-size: 1.2rem;
+  vertical-align: middle;
+  width: 100%;
+  margin: auto;
+}
+
+.highscore-card{
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr 1fr;
+  text-align: center;
+  width: 100%;
+  gap: .5rem;
+  padding: .5rem 1rem;
+  border-bottom: .2rem solid white;
+  align-items: center;
+}
+.highscore-text, .read-up-text{
+  text-align: center;
+  background-color: rgb(255, 255, 255, .2);
+  padding: .8rem;
+}
+.highscore-card img{
+  margin: auto;
+  height: 3rem;
+}
+#myBtn {
+  position: fixed; /* Fixed/sticky position */
+  bottom: 1rem; /* Place the button at the bottom of the page */
+  right: 1.2rem; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: white; /* Set a background color */
+  color: black; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 1.4em; /* Some padding */
+  border-radius: .4rem; /* Rounded corners */
+  font-size: .9rem; /* Increase font size */
+}
+
+.avatar-icons{
+  height: 4.5rem;
+  border-radius: 50%;
+}
+.read-up-container > div{
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  margin: .5rem 0;
+  border-bottom: .2rem solid white;
+  text-align: center;
+  gap: .5rem;
+  padding: .8rem .5rem;
+}
+.read-up-container > div > div{
+  display: flex;
+  align-items: center;
+justify-content: center;
+}
+.read-up-container > div img{
+height: 3.5rem;
+display: block;
+margin: 0 auto;
+}
+footer {
+  padding: .7rem;
+  color: white;
+  background-color: black;
+  text-align: center;
+
+}
+
+
+@keyframes Pop {
+  0% {
+      transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes beat{
+	to { transform: scale(1.5); }
+}
+
+
+
+
+
+
+@media(max-width:375px) {
+  html {
+      font-size: 12px;
+  }
+
+
+}
+
+@media(min-width:376px) and (max-width:575px) {
+  html {
+      font-size: 15px;
+  } 
+
+}
+
+
+@media(min-width:576px) and (max-width:820px) {
+  html {
+      font-size: 16px;
+  } 
+
+}
+
+@media(min-width: 821px) {
+  .content{
+  width: 70%;
+  margin: 0 auto;
+  }
+    .name-options{
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      width: 80%;
+    }
+    .flag-options{
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      width: 80%;
+    }
+    .game-over{
+      grid-template-columns: 1fr 2fr;
+    }
+    .highscore-container, .read-up-container{
+      width: 85%;
+    }
 }
