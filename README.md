@@ -1,6 +1,6 @@
 # Flag Quiz
 
-Flag Quiz Game is a web application built using React that allows users to test their knowledge of flags from around the world. Flag images are provided by Flagpedia.net using their flagcdn
+Flag Quiz Game is a web application built using React that allows users to test their knowledge of flags from around the world. Flag images are provided by Flagpedia.net using their flagcdn.
 
 ## Features
 
@@ -10,7 +10,7 @@ Flag Quiz Game is a web application built using React that allows users to test 
 
 ## Demo
 
-You can try out the Flag Quiz Game by visiting https://flag-quiz-game.netlify.app/.
+You can try out the Flag Quiz Game by visiting https://mesezi.github.io/Flag-Quiz/.
 
 ## Installation
 
